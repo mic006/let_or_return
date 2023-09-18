@@ -1,6 +1,6 @@
 [package]
 name = "let_or_return"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 description = "Convenient macro to extract a value via `if let`, and `return` in the else case"
 documentation = "https://docs.rs/let_or_return"
