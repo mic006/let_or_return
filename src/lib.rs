@@ -17,33 +17,55 @@
 ///
 /// # Examples
 /// ## Simple pattern
-/// ```ignore
-/// let opt_x = Some(42);
-/// let_or_return!(Some(x) = opt_x, false);
+/// ```
+/// use let_or_return::let_or_return;
+///
+/// fn process_x(opt_x: &Option<u32>) -> bool {
+///     let_or_return!(Some(x) = opt_x, false);
+///     // use x
+///     true
+/// }
 /// ```
 /// will expand to
-/// ```ignore
-/// let opt_x = Some(42);
-/// let x = if let Some(x) = opt_x { x } else { return false };
+/// ```
+/// fn process_x(opt_x: &Option<u32>) -> bool {
+///     let x = if let Some(x) = opt_x { x } else { return false };
+///     // use x
+///     true
+/// }
 /// ```
 ///
 /// ## Complex pattern, with explicit variable parameter
-/// ```ignore
+/// ```
+/// use let_or_return::let_or_return;
+///
 /// struct A {
 ///     a: Option<u32>,
 ///     b: u32,
 /// }
-/// let in_x = A{a: Some(42), b:27};
-/// let_or_return!(A{a: Some(a), b, c: _c} = in_x => (a, b), false);
+///
+/// fn process_x(in_x: &A) -> bool {
+///     let_or_return!(A { a: Some(a), b } = in_x => (a, b), false);
+///     // use a and b
+///     true
+/// }
 /// ```
 /// will expand to
-/// ```ignore
-/// let in_x = A { a: Some(42), b: 27, c: 12 };
-/// let (a, b) = if let A { a: Some(a), b, c: _c } = in_x {
-///     (a, b)
-/// } else {
-///     return false;
-/// };
+/// ```
+/// struct A {
+///     a: Option<u32>,
+///     b: u32,
+/// }
+///
+/// fn process_x(in_x: &A) -> bool {
+///     let (a, b) = if let A { a: Some(a), b } = in_x {
+///         (a, b)
+///     } else {
+///         return false;
+///     };
+///     // use a and b
+///     true
+/// }
 /// ```
 #[macro_export]
 macro_rules! let_or_return {
