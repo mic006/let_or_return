@@ -56,7 +56,7 @@ macro_rules! let_or_return {
         };
     };
     // complex pattern: pattern = input => var [, ret]
-    ($pattern:pat = $input:expr => $var:expr $(, $ret:expr )?) => {
+    ($pattern:pat = $input:expr => $var:tt $(, $ret:expr )?) => {
         let $var = if let $pattern = $input {
             $var
         } else {
