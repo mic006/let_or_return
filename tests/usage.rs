@@ -42,7 +42,7 @@ struct A {
 #[test]
 pub fn complex_pattern_with_return() {
     fn tst(in_x: &A, processed: &mut bool) -> u32 {
-        let_or_return!(A{a: Some(a), b, c: _c} = in_x => (a, b), 0);
+        let_or_return!(A { a: Some(a), b, c: _c } = in_x => (a, b), 0);
         *processed = true;
         a + b
     }
@@ -77,7 +77,7 @@ pub fn complex_pattern_with_return() {
 #[test]
 pub fn complex_pattern_without_return() {
     fn tst(in_x: &A, processed: &mut bool) {
-        let_or_return!(A{a: Some(a), b, c: _c} = in_x => (a, b));
+        let_or_return!(A { a: Some(a), b, c: _c } = in_x => (a, b));
         *processed = true;
         let _ = a + b;
     }
