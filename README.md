@@ -1,5 +1,6 @@
 # let_or_return
 
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
 [![Crates.io](https://img.shields.io/crates/v/let_or_return?logo=rust)](https://crates.io/crates/let_or_return)
 [![docs.rs](https://img.shields.io/docsrs/let_or_return?logo=docs.rs)](https://docs.rs/let_or_return)
 [![CI](https://img.shields.io/github/actions/workflow/status/mic006/let_or_return/ci.yml?branch=main)](https://github.com/mic006/let_or_return)

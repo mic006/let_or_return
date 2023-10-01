@@ -1,6 +1,6 @@
 [package]
 name = "let_or_return"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2021"
 description = "Convenient macro to extract a value via `if let`, and `return` in the else case"
 documentation = "https://docs.rs/let_or_return"
@@ -8,6 +8,9 @@ keywords = ["macros", "let"]
 categories = ["rust-patterns"]
 license = "MIT"
 repository = "https://github.com/mic006/let_or_return"
+
+[badges]
+maintenance = { status = "deprecated" }
 
 [dependencies]
 
