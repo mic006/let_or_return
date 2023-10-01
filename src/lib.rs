@@ -1,3 +1,18 @@
+//! ⚠️ This crate is **deprecated**. Use the [`let-else`](https://doc.rust-lang.org/rust-by-example/flow_control/let_else.html) statement instead.
+//!
+//! The `let-else` statement is exactly doing what I intended to do with `let_or_return` macro:
+//!
+//! ```
+//! fn process_x(opt_x: &Option<u32>) -> bool {
+//!     let Some(x) = opt_x else { return false };
+//!     // use x
+//!     true
+//! }
+//! ```
+//!
+//! ---
+//! Original documentation
+//!
 //! Convenient macro to extract a value via `if let`, and `return` in the else case.
 
 /// Extract a value via `if let`, and `return` in the else case.
